@@ -4445,19 +4445,19 @@
 											"rows": [
 												[
 													"Medium or smaller",
-													"{@dice 2d10}"
+													"{@damage 2d10}"
 												],
 												[
 													"Large",
-													"{@dice 4d10}"
+													"{@damage 4d10}"
 												],
 												[
 													"Huge",
-													"{@dice 8d10}"
+													"{@damage 8d10}"
 												],
 												[
 													"Gargantuan",
-													"{@dice 16d10}"
+													"{@damage 16d10}"
 												]
 											]
 										},
@@ -4497,7 +4497,7 @@
 													"entries": [
 														"Helming an airship that typically requires a dragonmarked pilot is difficult\u2014but not impossible. At your DM's discretion, you can use the following rules for piloting a ship without a dragonmark.",
 														"On its turn, a creature without the Mark of Storm occupying the Helm can attempt to take the Drive or Shift Engine action and make a {@dc 20} Intelligence (Arcana) or Charisma (Intimidation or Persuasion) check to command the engine's elemental spirit. On a successful check, the action happens. On a failed check, nothing happens, and the creature's action is wasted.",
-														"Magic can make an airship's elemental spirit more receptive to commands. Casting {@spell Charm Monster|XPHB} targeting the elemental spirit gives you Advantage on checks made to command the spirit for the spell's duration. If you instead cast {@i Dominate Monster} targeting the elemental spirit, any checks you make to command the spirit for the spell's duration automatically succeed. The elemental spirit automatically fails its saving throw against these spells, and you do not need to see the spirit to target it if you're occupying the Helm."
+														"Magic can make an airship's elemental spirit more receptive to commands. Casting {@spell Charm Monster|XPHB} targeting the elemental spirit gives you Advantage on checks made to command the spirit for the spell's duration. If you instead cast {@spell Dominate Monster|XPHB} targeting the elemental spirit, any checks you make to command the spirit for the spell's duration automatically succeed. The elemental spirit automatically fails its saving throw against these spells, and you do not need to see the spirit to target it if you're occupying the Helm."
 													]
 												}
 											]
@@ -4951,7 +4951,7 @@
 														],
 														[
 															"3",
-															"The airship passes through a lightning storm, which takes {@dice 1d4} hours. During this time, the area around the ship is {@variantrule Heavily Obscured|XPHB}, and any creature that starts its turn on the ship's deck must succeed on a {@dc 10} Dexterity saving throw or be struck by lightning and take 4 ({@dice 1d8}) Lightning damage."
+															"The airship passes through a lightning storm, which takes {@dice 1d4} hours. During this time, the area around the ship is {@variantrule Heavily Obscured|XPHB}, and any creature that starts its turn on the ship's deck must succeed on a {@dc 10} Dexterity saving throw or be struck by lightning and take 4 ({@damage 1d8}) Lightning damage."
 														],
 														[
 															"4",

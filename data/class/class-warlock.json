@@ -1,6 +1,7 @@
 {
 	"_meta": {
 		"internalCopies": [
+			"class",
 			"subclass",
 			"subclassFeature"
 		]
@@ -809,6 +810,22 @@
 				"Eldritch Master|Warlock|XPHB|20"
 			],
 			"subclassTitle": "Warlock Subclass",
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Warlock",
+			"source": "WoW",
+			"reskinOf": [
+				"Warlock|XPHB"
+			],
+			"_copy": {
+				"name": "Warlock",
+				"source": "XPHB"
+			},
+			"includeSubclassesFrom": [
+				"Warlock|XPHB"
+			],
 			"hasFluff": true,
 			"hasFluffImages": true
 		}
@@ -1949,6 +1966,34 @@
 			],
 			"hasFluff": true,
 			"hasFluffImages": true
+		},
+		{
+			"name": "Fiend Patron",
+			"shortName": "Fiend",
+			"source": "WoW",
+			"className": "Warlock",
+			"classSource": "WoW",
+			"_copy": {
+				"name": "Fiend Patron",
+				"source": "XPHB",
+				"shortName": "Fiend",
+				"className": "Warlock",
+				"classSource": "XPHB"
+			}
+		},
+		{
+			"name": "Great Old One Patron",
+			"shortName": "Great Old One",
+			"source": "WoW",
+			"className": "Warlock",
+			"classSource": "WoW",
+			"_copy": {
+				"name": "Great Old One Patron",
+				"source": "XPHB",
+				"shortName": "Great Old One",
+				"className": "Warlock",
+				"classSource": "XPHB"
+			}
 		}
 	],
 	"classFeature": [
@@ -2303,6 +2348,20 @@
 						},
 						{
 							"type": "refOptionalfeature",
+							"optionalfeature": "Call of the Void|WoW",
+							"preserve": {
+								"prerequisite": true
+							}
+						},
+						{
+							"type": "refOptionalfeature",
+							"optionalfeature": "Curse of Corruption|WoW",
+							"preserve": {
+								"prerequisite": true
+							}
+						},
+						{
+							"type": "refOptionalfeature",
 							"optionalfeature": "Devil's Sight|XPHB",
 							"preserve": {
 								"prerequisite": true
@@ -2338,6 +2397,13 @@
 						},
 						{
 							"type": "refOptionalfeature",
+							"optionalfeature": "Expendable Minions|WoW",
+							"preserve": {
+								"prerequisite": true
+							}
+						},
+						{
+							"type": "refOptionalfeature",
 							"optionalfeature": "Fiendish Vigor|XPHB",
 							"preserve": {
 								"prerequisite": true
@@ -2366,7 +2432,21 @@
 						},
 						{
 							"type": "refOptionalfeature",
+							"optionalfeature": "Health Funnel|WoW",
+							"preserve": {
+								"prerequisite": true
+							}
+						},
+						{
+							"type": "refOptionalfeature",
 							"optionalfeature": "Investment of the Chain Master|XPHB",
+							"preserve": {
+								"prerequisite": true
+							}
+						},
+						{
+							"type": "refOptionalfeature",
+							"optionalfeature": "Legion Summoning|WoW",
 							"preserve": {
 								"prerequisite": true
 							}
@@ -2388,6 +2468,13 @@
 						{
 							"type": "refOptionalfeature",
 							"optionalfeature": "Mask of Many Faces|XPHB",
+							"preserve": {
+								"prerequisite": true
+							}
+						},
+						{
+							"type": "refOptionalfeature",
+							"optionalfeature": "Master Demonologist|WoW",
 							"preserve": {
 								"prerequisite": true
 							}
@@ -2430,6 +2517,13 @@
 						{
 							"type": "refOptionalfeature",
 							"optionalfeature": "Pact of the Chain|XPHB",
+							"preserve": {
+								"prerequisite": true
+							}
+						},
+						{
+							"type": "refOptionalfeature",
+							"optionalfeature": "Pact of the Legion|WoW",
 							"preserve": {
 								"prerequisite": true
 							}
@@ -2490,7 +2584,7 @@
 			"classSource": "XPHB",
 			"level": 1,
 			"entries": [
-				"You have unearthed Eldritch Invocations, pieces of forbidden knowledge that imbue you with an abiding magical ability or other lessons. You gain one invocation of your choice, such as Pact of the Tome. Invocations are described in the \"{@filter Eldritch Invocation Options|optionalfeatures|feature type=EI|source=XPHB}\" section later in this class's description.",
+				"You have unearthed Eldritch Invocations, pieces of forbidden knowledge that imbue you with an abiding magical ability or other lessons. You gain one invocation of your choice, such as Pact of the Tome. Invocations are described in the \"{@filter Eldritch Invocation Options|optionalfeatures|feature type=EI|source===extend}\" section later in this class's description.",
 				{
 					"type": "entries",
 					"entries": [
@@ -3985,7 +4079,7 @@
 			"level": 14,
 			"header": 2,
 			"entries": [
-				"Starting at 14th level, the radiant energy you channel allows you to resist death. When you have to make a death saving throw at the start of your turn, you can instead spring back to your feet with a burst of radiant energy. You regain hit points equal to half your hit point maximum, and then you stand up if you so choose. Each creature of your choice that is within 30 feet of you takes radiant damage equal to {@dice 2d8} + your Charisma modifier, and it is {@condition blinded} until the end of the current turn.",
+				"Starting at 14th level, the radiant energy you channel allows you to resist death. When you have to make a death saving throw at the start of your turn, you can instead spring back to your feet with a burst of radiant energy. You regain hit points equal to half your hit point maximum, and then you stand up if you so choose. Each creature of your choice that is within 30 feet of you takes radiant damage equal to {@damage 2d8} + your Charisma modifier, and it is {@condition blinded} until the end of the current turn.",
 				"Once you use this feature, you can't use it again until you finish a long rest."
 			]
 		},
@@ -4477,7 +4571,7 @@
 					"type": "entries",
 					"name": "Unholy Resuscitation",
 					"entries": [
-						"If you drop to 0 Hit Points and don't die outright, you can cause your body to erupt with deathly energy. Each creature of your choice in a 30-foot {@variantrule Emanation [Area of Effect]|XPHB|Emanation} originating from you makes a Constitution saving throw against your spell save DC, taking Necrotic damage equal to {@dice 2d10} plus your Charisma modifier on a failed save or half as much damage on a successful one. Your Hit Points then change to twice your Warlock level, and you gain 1 {@condition Exhaustion|XPHB} level.",
+						"If you drop to 0 Hit Points and don't die outright, you can cause your body to erupt with deathly energy. Each creature of your choice in a 30-foot {@variantrule Emanation [Area of Effect]|XPHB|Emanation} originating from you makes a Constitution saving throw against your spell save DC, taking Necrotic damage equal to {@damage 2d10} plus your Charisma modifier on a failed save or half as much damage on a successful one. Your Hit Points then change to twice your Warlock level, and you gain 1 {@condition Exhaustion|XPHB} level.",
 						"Once you use this benefit, you can't use it again until you finish a {@variantrule Short Rest|XPHB|Short} or {@variantrule Long Rest|XPHB}."
 					]
 				}
@@ -4927,7 +5021,7 @@
 			"level": 14,
 			"header": 2,
 			"entries": [
-				"When you or an ally within 60 feet of you is about to make a {@variantrule Death Saving Throw|XPHB}, you can unleash radiant energy to save the creature. The creature regains {@variantrule Hit Points|XPHB} equal to half its {@variantrule Hit Points|XPHB|Hit Point} maximum and can end the {@condition Prone|XPHB} condition on itself. Each creature of your choice that is within 30 feet of the creature takes Radiant damage equal to {@dice 2d8} plus your Charisma modifier, and each has the {@condition Blinded|XPHB} condition until the end of the current turn.",
+				"When you or an ally within 60 feet of you is about to make a {@variantrule Death Saving Throw|XPHB}, you can unleash radiant energy to save the creature. The creature regains {@variantrule Hit Points|XPHB} equal to half its {@variantrule Hit Points|XPHB|Hit Point} maximum and can end the {@condition Prone|XPHB} condition on itself. Each creature of your choice that is within 30 feet of the creature takes Radiant damage equal to {@damage 2d8} plus your Charisma modifier, and each has the {@condition Blinded|XPHB} condition until the end of the current turn.",
 				"Once you use this feature, you can't use it again until you finish a {@variantrule Long Rest|XPHB}."
 			]
 		},

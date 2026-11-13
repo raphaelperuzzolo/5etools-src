@@ -13958,7 +13958,7 @@
 											"id": "3b0",
 											"page": 197,
 											"entries": [
-												"Death in dreams is less severe than in reality, but it's not without consequence. Of course, characters who are mere figments of a dreamer's imagination are simply removed from the dream. But a character dies while actually dreaming, the character receives no benefit from the rest and takes {@dice 3d6} psychic damage.",
+												"Death in dreams is less severe than in reality, but it's not without consequence. Of course, characters who are mere figments of a dreamer's imagination are simply removed from the dream. But a character dies while actually dreaming, the character receives no benefit from the rest and takes {@damage 3d6} psychic damage.",
 												"If you want to establish more severe consequences, you can. A dreamer killed by a quori could be trapped in Dal Quor while the quori possesses their body, forcing their allies to try to rescue them from their nightmares."
 											]
 										}
@@ -15847,7 +15847,7 @@
 														],
 														[
 															"3",
-															"The creature's body has been infused with one kind of energy: acid, cold, fire, or lightning (your choice, or determine randomly). Its melee attacks deal an extra {@dice 1d6} damage of that type, and it has the Elemental Body trait: a creature that touches it or hits it with a melee attack while within 5 feet of it takes 5 ({@dice 1d10}) damage of that type. You can adjust these damage numbers to suit the creature's challenge rating."
+															"The creature's body has been infused with one kind of energy: acid, cold, fire, or lightning (your choice, or determine randomly). Its melee attacks deal an extra {@damage 1d6} damage of that type, and it has the Elemental Body trait: a creature that touches it or hits it with a melee attack while within 5 feet of it takes 5 ({@damage 1d10}) damage of that type. You can adjust these damage numbers to suit the creature's challenge rating."
 														],
 														[
 															"4",
@@ -15949,7 +15949,7 @@
 											"entries": [
 												"House Cannith was born in Eston, and the house's labors transformed the city into a place of wonders. Clockwork birds perched and sang in silvery trees covered in steel bark. Skycoaches carried smiths and magewrights from forge to forge, and an iridescent dome protected the city from storms and harsh winds. On the proving grounds of the Cannith creation forges, cadres of newborn warforged learned the combat skills that would prepare them for active duty.",
 												"Eston began as a successful mining settlement, extracting iron and rare ores from the nearby hills. Drawing on these resources, the Cannith artificers in Eston spent decades researching all sorts of artificial creatures, which eventually gave rise to the warforged.",
-												"Because of these wonders, Eston is an irresistible attraction for treasure hunters hoping to access the vaults of House Cannith. Reports suggest, however, that it has become a strange and deadly place. It's said that the city is overrun by living spells. In addition to the remnants of damaging spells (see \"{@area Living Spells|064|x}\" in {@area chapter 6|513|x}), there are stranger phenomena: living {@i continual flames} that crawl along the streets, cling to lampposts, and flee from strangers, and living {@i scrying} spells that shift and shimmer, displaying distant scenes on their amorphous skin.",
+												"Because of these wonders, Eston is an irresistible attraction for treasure hunters hoping to access the vaults of House Cannith. Reports suggest, however, that it has become a strange and deadly place. It's said that the city is overrun by living spells. In addition to the remnants of damaging spells (see \"{@area Living Spells|064|x}\" in {@area chapter 6|513|x}), there are stranger phenomena: living {@spell continual flame||continual flames} that crawl along the streets, cling to lampposts, and flee from strangers, and living {@spell scrying} spells that shift and shimmer, displaying distant scenes on their amorphous skin.",
 												"Eston was renowned for its clockwork menagerie and its steel gardens, a showcase that chronicles House Cannith's centuries of work developing constructs and homunculi. These creatures have been twisted by the Mourning and have become deadly monsters. Stories tell of an enormous gorgon golem, of razor-winged swarms of silver songbirds, and many other equally strange things."
 											]
 										},

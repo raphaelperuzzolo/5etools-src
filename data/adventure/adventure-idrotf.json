@@ -6995,7 +6995,7 @@
 													"id": "12e",
 													"page": 52,
 													"entries": [
-														"The crates and most of the sacks contain basic supplies, including blankets, {@item Rations (1 day)|PHB|rations}, {@item Hempen Rope (50 feet)|PHB|hempen rope}, and other equipment. One small sack holds the stolen valuables from Caer-Konig: twenty-five pearls carved into decorative beads (5 gp each). Another sack contains three {@item Dagger|PHB|daggers}, a set of {@item woodcarver's tools|PHB}, a set of {@item navigator's tools|PHB}, {@item fishing tackle|PHB}, and a {@item potion of healing} hidden in a leather {@item pouch|PHB} along with 73 sp."
+														"The crates and most of the sacks contain basic supplies, including blankets, {@item Rations (1 day)|PHB|rations}, {@item Hempen Rope (50 feet)|PHB|hempen rope}, and other equipment. One small {@item sack|PHB} holds the stolen valuables from Caer-Konig: twenty-five pearls carved into decorative beads (5 gp each). Another {@item sack|PHB} contains three {@item Dagger|PHB|daggers}, a set of {@item woodcarver's tools|PHB}, a set of {@item navigator's tools|PHB}, {@item fishing tackle|PHB}, and a {@item potion of healing} hidden in a leather {@item pouch|PHB} along with 73 sp."
 													]
 												}
 											]
@@ -40627,7 +40627,7 @@
 													"id": "469",
 													"page": 173,
 													"entries": [
-														"Duergar have {@sense darkvision} and don't need light to see; even so, most rooms are heated by stone braziers filled with glowing-hot coals, and such areas are dimly lit.",
+														"Duergar have {@sense darkvision} and don't need light to see; even so, most rooms are heated by stone braziers filled with glowing-hot coals, and such areas are {@quickref Vision and Light||2||dimly lit}.",
 														{
 															"type": "list",
 															"style": "list-hang-notitle",
@@ -42971,7 +42971,7 @@
 													"id": "485",
 													"page": 176,
 													"entries": [
-														"Turning the iron winch on the west wall raises and lowers the portcullis between areas X1 and {@area X2|470|x}."
+														"Turning the iron winch on the west wall raises and lowers the portcullis between areas {@area X1|46d|x} and {@area X2|470|x}."
 													]
 												}
 											]
@@ -43374,7 +43374,7 @@
 														"This room contains braziers of glowing-hot coals in the northwest corner and the southwest corner. Loud mechanical noises come from behind the double door in the middle of the east wall."
 													]
 												},
-												"Unless they were drawn to area X19 by sounds of combat there, two {@creature duergar} stand against the west wall, watching the doors to area X22. These duergar have secretly pledged their loyalty to {@creature Grandolpha Muzgardt|IDRotF} (see \"{@area The Muzgardt Conspiracy|45e|x}\") and try to thwart Xardorok at every turn. They allow characters to pass through the room unmolested and are 50 percent likely to know Xardorok's current whereabouts."
+												"Unless they were drawn to area X19 by sounds of combat there, two {@creature duergar} stand against the west wall, watching the doors to area X22. These duergar have secretly pledged their loyalty to {@creature Grandolpha Muzgardt|IDRotF} (see \"{@area The Muzgardt Conspiracy|45e|x}\") and try to thwart Xardorok at every turn. They allow characters to pass through the room unmolested and are {@chance 50|50 percent} likely to know Xardorok's current whereabouts."
 											]
 										},
 										{
@@ -48935,7 +48935,7 @@
 													"type": "insetReadaloud",
 													"id": "58f",
 													"entries": [
-														"Arranged about this room are three tablets of ice, each ten feet tall, seven feet wide, and one foot thick. They sit upright in stands that are also carved from ice. Script has been chiseled into the surface of each tablet. Another door stands in the middle of the far wall."
+														"Arranged about this room are four tablets of ice, each ten feet tall, seven feet wide, and one foot thick. They sit upright in stands that are also carved from ice. Script has been chiseled into the surface of each tablet. Another door stands in the middle of the far wall."
 													]
 												},
 												"The inscriptions on the four ice tablets, in Common, spell out the tenets of Auril's faith:",
@@ -55074,7 +55074,7 @@
 							"id": "621",
 							"page": 231,
 							"entries": [
-								"Before running your first game session in the necropolis, review the \"Iriolarthas the Demilich\" and \"The Fall of Ythryn\" sections below, as well as the \"Dealing with the Arcane Brotherhood\" and \"Auril's Wrath\" sections at the end of the chapter.",
+								"Before running your first game session in the necropolis, review the \"Iriolarthas the Demilich\" and \"The Fall of Ythryn\" sections below, as well as the \"{@area Dealing with the Arcane Brotherhood|6d7|x}\" and \"{@area Auril's Wrath|6df|x}\" sections at the end of the chapter.",
 								{
 									"type": "entries",
 									"name": "Character Advancement",
@@ -59058,7 +59058,7 @@
 							"id": "6e6",
 							"page": 262,
 							"entries": [
-								"If the characters don't stop Auril, her everlasting winter becomes unendurable to most of Icewind Dale's inhabitants. The hostile climate and the scarcity of food force indigenous creatures to migrate southward or die. As go the {@creature reindeer|IDRotF}, so go the Reghed tribesfolk. In time, even the lakes freeze solid, depriving Ten-Towners of the knucklehead trout upon which their survival depends. Within a year or two, Icewind Dale becomes a gods-forsaken wasteland as cold as Stygia. The bitter cold allows Levistus to open portals between Icewind Dale and the sixth layer of the Nine Hells, from which come forth ice devils under the archdevil's command. Knights of the Black Sword who survive to see these events come to pass try to maintain a foothold in the region, though they are opposed by duergar at every turn.",
+								"If the characters don't stop Auril, her everlasting winter becomes unendurable to most of Icewind Dale's inhabitants. The hostile climate and the scarcity of food force indigenous creatures to migrate southward or die. As go the reindeer, so go the Reghed tribesfolk. In time, even the lakes freeze solid, depriving Ten-Towners of the knucklehead trout upon which their survival depends. Within a year or two, Icewind Dale becomes a gods-forsaken wasteland as cold as Stygia. The bitter cold allows Levistus to open portals between Icewind Dale and the sixth layer of the Nine Hells, from which come forth ice devils under the archdevil's command. Knights of the Black Sword who survive to see these events come to pass try to maintain a foothold in the region, though they are opposed by duergar at every turn.",
 								"The ice devils help clear the way for the duergar, who aren't going anywhere unless the characters kill {@creature Xardorok Sunblight|IDRotF} and put an end to his line. Once Ten-Towns is no longer a threat to his supremacy, Xardorok does his utmost to conquer the rest of Icewind Dale. If left unchecked, the duergar become a controlling power in the region. The ice devils, once subservient to Levistus, are dragooned by Asmodeus into helping the duergar turn the Far North into a vassal kingdom secretly under the sway of the Nine Hells."
 							]
 						},

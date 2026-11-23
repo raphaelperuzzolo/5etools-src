@@ -693,7 +693,7 @@ globalThis.Renderer = class {
 		return Renderer.stripTags(
 			[entry.title, entry.credit ? `Art credit: ${entry.credit}` : null]
 				.filter(Boolean)
-				.join(". "),
+				.join("\n"),
 		).qq();
 	}
 
@@ -3811,7 +3811,7 @@ Renderer.utils = class {
 			ent.tokenCustom ? `This is a custom/unofficial token.` : "",
 		]
 			.filter(Boolean)
-			.join(". ");
+			.join("\n");
 
 		return [
 			`alt="Token Image${tokenName ? `: ${tokenName.qq()}` : ""}"`,
@@ -4294,7 +4294,7 @@ Renderer.utils = class {
 					}
 
 					const prereqsToJoin = Object.entries(pr)
-						.filter(([k]) => !prereqsShared[k])
+						.filter(([k]) => !(k in prereqsShared))
 						.sort(([kA], [kB]) => this._WEIGHTS[kA] - this._WEIGHTS[kB])
 						.map(([k, v]) => {
 							if (k === "note" || blocklistKeys?.has(k)) return false;
@@ -4675,38 +4675,40 @@ Renderer.utils = class {
 			}
 
 			const parts = v.map(obj => {
-				return Object.entries(obj).map(([profType, prof]) => {
-					switch (profType) {
-						case "armor": {
-							if (prof === "shield") {
-								if (isListMode) return styleHint === "classic" ? `Prof ${prof}` : `${prof.toTitleCase()} Trai.`;
-								return styleHint === "classic" ? `Proficiency with ${prof}s` : `${prof.toTitleCase()} Training`;
-							}
+				return Object.entries(obj)
+					.map(([profType, prof]) => {
+						switch (profType) {
+							case "armor": {
+								if (prof === "shield") {
+									if (isListMode) return styleHint === "classic" ? `Prof ${prof}` : `${prof.toTitleCase()} Trai.`;
+									return styleHint === "classic" ? `Proficiency with ${prof}s` : `${prof.toTitleCase()} Training`;
+								}
 
-							if (isListMode) return styleHint === "classic" ? `Prof ${Parser.armorFullToAbv(prof)} armor` : `${Parser.armorFullToAbv(prof).toTitleCase()} Armor Trai.`;
-							return styleHint === "classic" ? `Proficiency with ${prof} armor` : `${prof.toTitleCase()} Armor Training`;
+								if (isListMode) return styleHint === "classic" ? `Prof ${Parser.armorFullToAbv(prof)} armor` : `${Parser.armorFullToAbv(prof).toTitleCase()} Armor Trai.`;
+								return styleHint === "classic" ? `Proficiency with ${prof} armor` : `${prof.toTitleCase()} Armor Training`;
+							}
+							case "weapon": {
+								return isListMode ? `Prof ${Parser.weaponFullToAbv(prof)} weapon` : `Proficiency with a ${prof} weapon`;
+							}
+							case "weaponGroup": {
+								return isListMode ? `Prof ${Parser.weaponFullToAbv(prof)} weapons` : `${prof.toTitleCase()} Weapon Proficiency`;
+							}
+							case "skill": {
+								if (prof === true) return isListMode ? `Skill Proficiency` : `Proficiency in a skill`;
+								return isListMode
+									? prof.map(skill => skill.toTitleCase()).join("+")
+									: `Proficiency in the ${prof.map(skill => `{@skill ${skill.toTitleCase()}}`).joinConjunct(", ", " and ")} skill${prof.length === 1 ? "" : "s"}`;
+							}
+							case "tool": {
+								if (prof === true) return isListMode ? "Tool Proficiency" : "Proficiency with a Tool";
+								return isListMode
+									? prof.map(tool => tool.toTitleCase()).join("+")
+									: `Proficiency with ${prof.map(tool => tool.toTitleCase()).joinConjunct(", ", " and ")}`;
+							}
+							default: throw new Error(`Unhandled proficiency type: "${profType}"`);
 						}
-						case "weapon": {
-							return isListMode ? `Prof ${Parser.weaponFullToAbv(prof)} weapon` : `Proficiency with a ${prof} weapon`;
-						}
-						case "weaponGroup": {
-							return isListMode ? `Prof ${Parser.weaponFullToAbv(prof)} weapons` : `${prof.toTitleCase()} Weapon Proficiency`;
-						}
-						case "skill": {
-							if (prof === true) return isListMode ? `Skill Proficiency` : `Proficiency in a skill`;
-							return isListMode
-								? prof.map(skill => skill.toTitleCase()).join("+")
-								: `Proficiency in the ${prof.map(skill => `{@skill ${skill.toTitleCase()}}`).joinConjunct(", ", " and ")} skill${prof.length === 1 ? "" : "s"}`;
-						}
-						case "tool": {
-							if (prof === true) return isListMode ? "Tool Proficiency" : "Proficiency with a Tool";
-							return isListMode
-								? prof.map(tool => tool.toTitleCase()).join("+")
-								: `Proficiency with ${prof.map(tool => tool.toTitleCase()).joinConjunct(", ", " and ")}`;
-						}
-						default: throw new Error(`Unhandled proficiency type: "${profType}"`);
-					}
-				});
+					})
+					.joinConjunct(isListMode ? "+" : ", ", isListMode ? "+" : " and ");
 			});
 			return isListMode ? parts.join("/") : parts.joinConjunct(", ", " or ");
 		}
@@ -10862,7 +10864,7 @@ Renderer.monster = class {
 
 		const prefix = mon.isNamedCreature ? "" : isTitleCase || isSentenceCase ? "The " : "the ";
 		if (shortName === true) return `${prefix}${name}`;
-		else if (shortName) return `${prefix}${!prefix && isTitleCase ? shortName.toTitleCase() : shortName.toLowerCase()}`;
+		else if (shortName) return `${prefix}${!prefix && isTitleCase ? shortName.toTitleCase() : (mon.isNamedCreature ? shortName : shortName.toLowerCase())}`;
 
 		const out = Renderer.monster.getShortNameFromName(name, {isNamedCreature: mon.isNamedCreature});
 		return `${prefix}${out}`;
@@ -10885,7 +10887,7 @@ Renderer.monster = class {
 	/* -------------------------------------------- */
 
 	static getLegendaryActionIntro (mon, {renderer = Renderer.get(), isUseDisplayName = false, styleHint = null} = {}) {
-		return renderer.render(Renderer.monster.getLegendaryActionIntroEntry(mon, {isUseDisplayName}));
+		return renderer.render(Renderer.monster.getLegendaryActionIntroEntry(mon, {isUseDisplayName, styleHint}));
 	}
 
 	static getLegendaryActionIntroEntry (mon, {isUseDisplayName = false, styleHint = null} = {}) {
@@ -10901,17 +10903,19 @@ Renderer.monster = class {
 		const proPossessive = Renderer.monster.getPronounPossessive(mon);
 
 		if (styleHint === "classic") {
+			const legendaryActionsLairCondition = mon.legendaryActionsLairCondition || `in ${proPossessive} lair`;
 			return {
 				entries: [
-					`${legendaryNameTitle} can take ${legendaryActions} legendary action${legendaryActions > 1 ? "s" : ""}${legendaryActionsLair !== legendaryActions ? ` (or ${legendaryActionsLair} when in ${proPossessive} lair)` : ""}, choosing from the options below. Only one legendary action can be used at a time and only at the end of another creature's turn. ${legendaryNameTitle} regains spent legendary actions at the start of ${proPossessive} turn.`,
+					`${legendaryNameTitle} can take ${legendaryActions} legendary action${legendaryActions > 1 ? "s" : ""}${legendaryActionsLair !== legendaryActions ? ` (or ${legendaryActionsLair} when ${legendaryActionsLairCondition})` : ""}, choosing from the options below. Only one legendary action can be used at a time and only at the end of another creature's turn. ${legendaryNameTitle} regains spent legendary actions at the start of ${proPossessive} turn.`,
 				],
 			};
 		}
 
 		const legendaryNameOther = Renderer.monster.getShortName(mon, {isUseDisplayName});
+		const legendaryActionsLairCondition = mon.legendaryActionsLairCondition || "in Lair";
 		return {
 			entries: [
-				`{@note Legendary Action Uses: ${legendaryActions}${legendaryActionsLair !== legendaryActions ? ` (${legendaryActionsLair} in Lair)` : ""}. Immediately after another creature's turn, ${legendaryNameOther} can expend a use to take one of the following actions. ${legendaryNameTitle} regains all expended uses at the start of each of ${proPossessive} turns.}`,
+				`{@note Legendary Action Uses: ${legendaryActions}${legendaryActionsLair !== legendaryActions ? ` (${legendaryActionsLair} ${legendaryActionsLairCondition})` : ""}. Immediately after another creature's turn, ${legendaryNameOther} can expend a use to take one of the following actions. ${legendaryNameTitle} regains all expended uses at the start of each of ${proPossessive} turns.}`,
 			],
 		};
 	}

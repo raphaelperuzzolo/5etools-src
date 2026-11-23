@@ -4894,7 +4894,7 @@
 			],
 			"skillProficiencies": [
 				{
-					"any": 1
+					"any": 2
 				}
 			],
 			"languageProficiencies": [
@@ -13957,6 +13957,7 @@
 					]
 				},
 				{
+					"level": 4,
 					"feature": [
 						"Spellcasting",
 						"Pact Magic"
